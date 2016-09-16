@@ -1,0 +1,24 @@
+{
+  "name": "framework-cache",
+  "version": "1.0.0",
+  "description": "Wrap for cache-manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gongxiancao/framework-cache.git"
+  },
+  "author": "GongXian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gongxiancao/framework-cache/issues"
+  },
+  "homepage": "https://github.com/gongxiancao/framework-cache#readme",
+  "dependencies": {
+    "cache-manager": "^2.1.2",
+    "lodash": "^4.15.0",
+    "bluebird": "3.3.5"
+  }
+}

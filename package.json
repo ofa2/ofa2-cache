@@ -16,6 +16,15 @@
     "url": "https://github.com/gongxiancao/framework-cache/issues"
   },
   "homepage": "https://github.com/gongxiancao/framework-cache#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-mocha": "^2.2.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "sinon": "^1.17.5"
+  },
   "dependencies": {
     "cache-manager": "^2.1.2",
     "lodash": "^4.15.0",

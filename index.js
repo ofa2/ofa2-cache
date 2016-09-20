@@ -54,7 +54,7 @@ function initCache() {
 function CacheWrapperPrefixer (fn) {
   return function () {
     arguments[0] = this.prefix + arguments[0];
-    return this.cache[fn].apply(this.cache, Array.prototype.slice(arguments, 0));
+    return this.cache[fn].apply(this.cache, Array.prototype.slice.call(arguments, 0));
   };
 }
 

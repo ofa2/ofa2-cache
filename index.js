@@ -30,7 +30,7 @@ function initCache() {
     }
     else {
       var connectionConfig = framework.config.connections[cacheConfig.connection];
-      if(cacheConfig.connection && connectionConfig) {
+      if(cacheConfig.connection && !connectionConfig) {
         throw new Error('undefined connection ' + cacheConfig.connection);
       }
       cache = cacheManager.caching(_.extend({store: require(cacheConfig.store)}, connectionConfig));

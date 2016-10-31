@@ -23,13 +23,13 @@ var _ = require('lodash'),
 
 var exposeCaches = {};
 function initCache() {
-  var caches = _.map(framework.config.cache.caches, function (cacheConfig) {
+  var caches = _.map(ofa.config.cache.caches, function (cacheConfig) {
     var cache;
     if(cacheConfig.store === 'memory') {
       cache = cacheManager.caching(cacheConfig);
     }
     else {
-      var connectionConfig = framework.config.connections[cacheConfig.connection];
+      var connectionConfig = ofa.config.connections[cacheConfig.connection];
       if(cacheConfig.connection && !connectionConfig) {
         throw new Error('undefined connection ' + cacheConfig.connection);
       }
@@ -70,14 +70,14 @@ CacheWrapper.prototype.del = CacheWrapperPrefixer('del');
 
 function lift (done) {
   var multiCache = initCache();
-  var prefix = framework.config.cache.prefix;
+  var prefix = ofa.config.cache.prefix;
 
   var result = new CacheWrapper(multiCache, prefix);
   for(var key in exposeCaches) {
     result[key] = new CacheWrapper(exposeCaches[key], prefix);
   }
 
-  framework.cache = result;
+  ofa.cache = result;
   done();
 }
 

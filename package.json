@@ -1,5 +1,5 @@
 {
-  "name": "framework-cache",
+  "name": "ofa-cache",
   "version": "1.0.0",
   "description": "Wrap for cache-manager",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gongxiancao/framework-cache.git"
+    "url": "git+https://github.com/gongxiancao/ofa-cache.git"
   },
   "author": "GongXian",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gongxiancao/framework-cache/issues"
+    "url": "https://github.com/gongxiancao/ofa-cache/issues"
   },
-  "homepage": "https://github.com/gongxiancao/framework-cache#readme",
+  "homepage": "https://github.com/gongxiancao/ofa-cache#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",

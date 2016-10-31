@@ -11,7 +11,7 @@ var cacheModule = require('./index'),
 
 describe('cache', function() {
   it('should callback called', function (done) {
-    global.framework = {
+    global.ofa = {
       config: {
         cache: {
           stores: [
@@ -31,7 +31,7 @@ describe('cache', function() {
           return 'value1';
         }
         var spy = sinon.spy(getValue);
-        framework.cache.wrap('key1', spy)
+        ofa.cache.wrap('key1', spy)
           .then(function () {
             should.equal(spy.callCount, 1);
             done();

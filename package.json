@@ -1,5 +1,5 @@
 {
-  "name": "ofa-cache",
+  "name": "@ofa2/ofa2-cache",
   "version": "1.0.0",
   "description": "Wrap for cache-manager",
   "main": "index.js",
@@ -22,12 +22,11 @@
     "gulp-jshint": "^2.0.1",
     "gulp-mocha": "^2.2.0",
     "jshint": "^2.9.2",
-    "jshint-stylish": "^2.2.0",
-    "sinon": "^1.17.5"
+    "jshint-stylish": "^2.2.0"
   },
   "dependencies": {
     "cache-manager": "^2.1.2",
     "lodash": "^4.15.0",
-    "bluebird": "3.3.5"
+    "bluebird": "^3.3.5"
   }
 }

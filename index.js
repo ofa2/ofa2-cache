@@ -22,14 +22,14 @@ var _ = require('lodash'),
   Promise = require('bluebird');
 
 var exposeCaches = {};
-function initCache() {
-  var caches = _.map(ofa.config.cache.caches, function (cacheConfig) {
+function initCache(config) {
+  var caches = _.map(config.cache.caches, function (cacheConfig) {
     var cache;
     if(cacheConfig.store === 'memory') {
       cache = cacheManager.caching(cacheConfig);
     }
     else {
-      var connectionConfig = ofa.config.connections[cacheConfig.connection];
+      var connectionConfig = config.connections[cacheConfig.connection];
       if(cacheConfig.connection && !connectionConfig) {
         throw new Error('undefined connection ' + cacheConfig.connection);
       }
@@ -69,15 +69,15 @@ CacheWrapper.prototype.set = CacheWrapperPrefixer('set');
 CacheWrapper.prototype.del = CacheWrapperPrefixer('del');
 
 function lift (done) {
-  var multiCache = initCache();
-  var prefix = ofa.config.cache.prefix;
+  var multiCache = initCache(framework.config);
+  var prefix = framework.config.cache.prefix;
 
   var result = new CacheWrapper(multiCache, prefix);
   for(var key in exposeCaches) {
     result[key] = new CacheWrapper(exposeCaches[key], prefix);
   }
 
-  ofa.cache = result;
+  framework.cache = result;
   done();
 }
 
